@@ -52,7 +52,7 @@ public class MainActivity extends AppCompatActivity {
         {
             @Override public void onEvent(DiscoveryEvent e)
             {
-                if( e.was(LifeCycle.DISCOVERED) )
+                if( e.was(LifeCycle.DISCOVERED) || e.was(LifeCycle.REDISCOVERED) )
                 {
                     e.device().connect(new BleDevice.StateListener()
                     {
